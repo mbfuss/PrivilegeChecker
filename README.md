@@ -25,6 +25,8 @@ server.bat
 
 - [Python 3.x.x](https://www.python.org)
 
+- [С++ компилятор](https://visualstudio.microsoft.com/ru/vs/features/cplusplus/)
+
 # Инструкция по запуску
 
 **1. Клонируйте репозиторий**
