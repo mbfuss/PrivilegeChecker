@@ -28,7 +28,7 @@ server.bat
 **1. Клонируйте репозиторий**
    
 ```
-https://github.com/mbfuss/PrivilegeChecker.git
+git clone https://github.com/mbfuss/PrivilegeChecker.git
 ```
 
 **2. Установите node-gyp глобально через npm**
