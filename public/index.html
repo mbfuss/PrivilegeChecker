@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка привилегий пользователя</title>
+    <style>
+        #result {
+            margin-top: 20px;
+        }
+
+        #backButton {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Проверка привилегий пользователя</h1>
+    <div id="inputSection">
+        <input type="text" id="username" placeholder="Введите имя пользователя">
+        <button onclick="checkPrivilege()">Проверить</button>
+    </div>
+    <p id="result"></p>
+    <button id="backButton" onclick="goBack()">Назад</button>
+
+    <script>
+        function checkPrivilege() {
+            const userName = document.getElementById('username').value;
+            fetch('/check', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ userName })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    let resultText;
+                    if (data.found) {
+                        resultText = `Пользователь ${userName} имеет привилегию ${data.privilege}`;
+                    } else {
+                        resultText = `Пользователя ${userName} нет`;
+                    }
+                    document.getElementById('result').innerText = resultText;
+                    document.getElementById('inputSection').style.display = 'none';
+                    document.getElementById('backButton').style.display = 'block';
+                });
+        }
+
+        function goBack() {
+            document.getElementById('result').innerText = '';
+            document.getElementById('inputSection').style.display = 'block';
+            document.getElementById('backButton').style.display = 'none';
+            document.getElementById('username').value = '';
+        }
+    </script>
+</body>
+</html>

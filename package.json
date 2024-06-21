@@ -1,0 +1,21 @@
+{
+  "name": "userprivilegechecker",
+  "version": "1.0.0",
+  "description": "Web application to check user privileges using Node.js, C++, and WinAPI",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "install": "node-gyp rebuild"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "open": "^10.1.0"
+  },
+  "devDependencies": {
+    "node-addon-api": "^3.2.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "gypfile": true
+}
