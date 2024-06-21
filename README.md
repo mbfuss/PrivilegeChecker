@@ -21,7 +21,9 @@ server.bat
  
 # Требования
 
-- Node.js (включая npm)
+- [Node.js](https://nodejs.org/en/)
+
+- [Python 3.x.x](https://www.python.org)
 
 # Инструкция по запуску
 
